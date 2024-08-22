@@ -29,9 +29,14 @@ const Image = () => (
     alt="카네기 뭐시기 책"
   />
 );
-const Title = () => <h2>카네기 인간관계론</h2>;
+const Title = () => <h2>카네기 인간관계론 </h2>;
 const Author = () => {
-  return <h2>카네기</h2>;
+  const inlineHeadingStyles = {
+    color: "#617d98",
+    fontSize: "0.75rem",
+    marginTop: "0.5rem",
+  };
+  return <h4 style={inlineHeadingStyles}>카네기</h4>;
 };
 
 // React.createElement로 만들기 ... 복잡
