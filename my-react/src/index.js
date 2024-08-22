@@ -9,22 +9,22 @@ const author = "abcde";
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book job="developer" />
+      <Book title="random title" number={22} />
     </section>
   );
 };
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
       <img src={bookImage} alt={title} />
       <h2>{title} </h2>
       <h4>{author.toUpperCase()}</h4>
-      {/* {}안에는 값을 반환하는 식만 전달가능 
-      따라서 6+6 은 되지만 let x = 6 이런건 안됨*/}
+      <p>{props.job}</p>
+      <p>{props.title}</p>
+      <p>{props.number}</p>
     </article>
   );
 };
