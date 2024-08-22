@@ -33,14 +33,29 @@ const BookList = () => {
 
 const Book = (props) => {
   console.log(props);
+  const { img, author, title } = props;
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };
+
+// 아래와 같이 하는 것도 가능
+// const Book = ({ img, author, title }) => {
+//   // props는 출력할 수 없으나 img를 출력하면 객체의 값이 나옴
+//   // console.log(props);
+// //   console.log(img);
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
