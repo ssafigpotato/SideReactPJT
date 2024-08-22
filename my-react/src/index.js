@@ -1,20 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-function Greeting() {
+const BookList = () => {
   return (
-    // 부모 요소 하나만 반환해야함
-    <>
-      <Person />
-      <Message />
-    </>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
-}
-
-const Person = () => <h2>John doe</h2>;
-const Message = () => {
-  return <h2>This is my message</h2>;
 };
+
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => (
+  <img
+    src="https://m.media-amazon.com/images/I/61wszoCLDOL._AC_UL640_FMwebp_QL65_.jpg"
+    alt="카네기 뭐시기 책"
+  />
+);
+const Title = () => <h2>카네기 뭐시기</h2>;
+const Author = () => {
+  return <h2>카네기</h2>;
+};
+
 // React.createElement로 만들기 ... 복잡
 // function Greeting() {
 //   return React.createElement(
@@ -26,5 +44,5 @@ const Message = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Greeting />);
+root.render(<BookList />);
 // export default Greeting;
